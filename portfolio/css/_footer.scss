@@ -1,0 +1,10 @@
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $text-font;
+    border-top: 1px solid $black-color;
+    p,a{
+        padding: 1em 0;
+    }
+}

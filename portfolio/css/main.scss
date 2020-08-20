@@ -1,0 +1,282 @@
+@import "colors","typography","resets","basics","navigation","footer","sidebar";
+
+//preloader
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.preloader{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 80;
+    background-color: $primary-color;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $sub-header-font;
+    font-weight: bold;
+    color: white;
+}
+
+//hero-section
+.hero{
+    position: relative;
+    //padding: 2em 0;
+    &--header{
+        font-size: $hero-font;
+        line-height: 95%;
+    }
+    &--image{
+        transform: scaleX(-1);
+        width: 60%;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        z-index: -1;
+    }
+}
+
+.hero-ctas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //padding: 0;
+    .socials{
+        margin-top: 1em;
+        a{
+            margin-right: 1em;
+        }
+    }
+    .scroll-cta{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $black-color;
+        height: 7em;
+        width: 7em;
+        border-radius: 3000px;
+        margin-right: 3em;
+        position: relative;
+        top: 2em;
+        a{
+            padding: 0;
+            text-decoration: none;
+        }
+    }
+}
+
+
+.work{
+    margin-top: 2em;
+    .work-header{
+        margin: 3em 0;
+        font-size: $header-font;
+        position: sticky;
+        top: 5vh;
+    }
+
+    .projects{
+        .frontend{
+            margin-top: 5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            &-left{
+                position: sticky;
+                top: 30vh;
+                width: 40%;
+                transition: opacity ease-in .2s;
+                h3{
+                    font-size: $sub-header-font;
+                    color: $tertiary-color;
+                    padding: 1em 0;
+                }
+                .info{
+                    font-size: $text-font;
+                    padding-bottom: 1em;
+                }
+                .counter{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: $sub-header-font;
+                    font-weight: bold;
+                    margin: 1em 0;
+                    &-bar{
+                        width: 65%;
+                        height: 1px;
+                        background-color: $black-color;
+                        // &::after{
+                        //     content: "";
+                        //     display: inline-block;
+                        //     width: 100%;
+                        //     height: 3px;
+                        //     background-color: $black-color;
+                        //     transform: translateY(-50%);
+                        // }
+                    }
+                    &-fill{
+                        width: 25%;
+                        height: 4px;
+                        transform: translateY(-2px);
+                        background-color: $black-color;
+                        transition: width ease-out .2s;
+                        &:hover{
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+            &-right{
+                width: 50%;
+                .project{
+                    margin-top: 14em;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-decoration: none;
+                    &-image{
+                        width: 80%;
+                        //height: 270px;
+                        background: $primary-color;
+                        //filter: grayscale(100%);
+                        //transition: filter ease-out .1ms;
+                    }
+                    &-name{
+                        font-size: $sub-header-font;
+                        padding-top: .5em;
+                        text-align: center;
+                        color: $tertiary-color;
+                        &:active{
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about{
+    margin-bottom: 2em;
+    &-header{
+        font-size: $header-font;
+        margin: 1em 0;
+    }
+    &-para{
+        font-size: $sub-header-font;
+        font-weight: bold;
+        padding-bottom: 1em;
+    }
+    &-subheader{
+        font-size: $sub-header-font;
+        padding-top: 1em;
+        padding-bottom: .5em;
+    }
+    a{
+        display: block;
+    }
+}
+
+//media queries
+
+@media(max-width:760px){
+    html{
+        font-size: 14px;
+    }
+    .hero{
+        &--image{
+            top: 100px;
+        }
+    }
+    
+}
+@media(max-width:660px){
+    .hero{
+        &--header{
+            font-size: 6.5rem;
+            line-height: 95%;
+        }
+    }
+    .hero-ctas{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        //padding: 0;
+        .socials{
+            margin-top: 1em;
+            a{
+                margin-right: 1em;
+            }
+        }
+        .scroll-cta{
+            display: none;
+        }
+    }
+    .work{
+        //margin-top: 2em;
+        .work-header{
+            top: 0;
+            padding: .5em 0;
+            margin: 0;
+            background-color: white;
+            z-index: 5;
+        }
+    
+        .projects{
+            .frontend{
+                margin-top: 3em;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                //text-align: center;
+                &-left{
+                    position: relative;
+                    top: 0;
+                    width: 100%;
+                    opacity: 1 !important;
+                    h3{
+                        font-size: 3.5rem;
+                    }
+                    .counter{
+                        display: none;
+                    }
+                }
+                &-right{
+                    width: 100%;
+                    .project{
+                        margin-top: 3em;
+                        margin-bottom: 8em;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media(max-width:500px){
+    html{
+        font-size: 12px;
+    }
+    .hero{
+        &--header{
+            font-size: 5rem;
+            line-height: 95%;
+        }
+        &--image{
+            top: 100px;
+        }
+    }
+}
+@media(max-width:350px){
+    html{
+        font-size: 10px;
+    }
+}

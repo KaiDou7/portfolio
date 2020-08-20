@@ -1,0 +1,121 @@
+@import "colors","typography","resets","basics","navigation","footer","sidebar";
+
+.main{
+    &-topic{
+        font-size: $sub-header-font;
+        text-align: center;
+        margin: .5em auto;
+    }
+    &-image{
+        //border: 2em solid #24242473;
+        width: 80%;
+        margin: 2em auto;
+    }
+    &-ctas{
+        display: flex;
+        min-width: 300px;
+        width: 30%;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-header{
+        font-size: $sub-header-font;
+        margin: 1.5em 0;
+    }
+    &-para{
+        font-size: $text-font;
+    }
+    &-colors{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &-color{
+        width: 20%;
+        min-width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.next-container{
+    color: $black-color;
+    text-decoration: none;
+}
+
+.next{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 6em auto;
+    transition: transform ease-out 1s;
+    &-header{
+        font-size: $header-font;
+    }
+    &-cta{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $black-color;
+        height: 7em;
+        width: 7em;
+        border-radius: 3000px;
+        margin-right: 3em;
+        position: relative;
+        top: 2em;
+        a{
+            padding: 0;
+            text-decoration: none;
+        }
+    }
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+
+.custom-cursor-image {
+    cursor: url("/assets/next.svg"), pointer;
+}
+  
+.custom-cursor-image:active {
+    cursor: url("/assets/next.svg"), pointer;
+}
+
+//media queries
+
+@media(max-width:760px){
+    html{
+        font-size: 14px;
+    }
+    .main{
+
+        &-image{
+            //border: 2em solid #24242473;
+            width: 100%;
+        }
+    }
+    .next{
+        &-header{
+            font-size: 4rem;
+        }
+    }
+}
+
+
+@media(max-width:500px){
+    html{
+        font-size: 12px;
+    }
+}
+@media(max-width:350px){
+    html{
+        font-size: 10px;
+    }
+    .next{
+        &-header{
+            font-size: 2.5rem;
+        }
+    }
+}

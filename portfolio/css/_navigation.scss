@@ -1,0 +1,23 @@
+header{
+    margin: 0 1em;
+    .nav{
+        font-size: $text-font;
+        padding: 1.5em 0;
+        border-bottom: 1px solid $black-color;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .home-cta{
+            text-decoration: none;
+            color: $black-color;
+        }
+        .portfolio{
+            text-align: center;
+        }
+        .available-cta{
+            text-align: end;
+            text-decoration: underline;
+            color: $black-color;
+            padding-right: 0;
+        }
+    }
+}
